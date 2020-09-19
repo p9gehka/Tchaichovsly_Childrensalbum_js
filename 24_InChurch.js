@@ -22,7 +22,6 @@ let play = (osc, pitch, duration) => {
 	adsr(osc, duration);
 }
 let adsr = (osc, duration) => {
-	let attackTime = 0.1, attackGain = 0.2;
 	osc.gain.value = 0;
 	[[ag, at], [ag / 2, 0.65 * duration], [0,0.75 * duration + 0.2]]
 		.forEach(([volume, time])=> osc.gain.linearRampToValueAtTime(volume, ac.currentTime + time))
@@ -90,6 +89,7 @@ ctx.stroke()
 }, 50)
 sd.s('878973 16')
 sf.s('999989 19')
+at=0.2;ag=0.03; // whey inx is equal to 68
 sg.s('976664 24')
 sa.s('9789 2')
 sd.s('8944 12')
